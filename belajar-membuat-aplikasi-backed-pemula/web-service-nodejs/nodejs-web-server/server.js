@@ -4,7 +4,24 @@ const requestListener = (req, res) => {
   res.setHeader("Content-Type", "text/html");
 
   res.statusCode = 200;
-  res.end("<h1>Halo HTTP Server!</h1>");
+
+  const { method } = req;
+
+  if (method === "GET") {
+    res.end("<h1>Hello!</h1>");
+  }
+
+  if (method === "POST") {
+    res.end("<h1>Hai!</h1>");
+  }
+
+  if (method === "PUT") {
+    res.end("<h1>Bonjour!</h1>");
+  }
+
+  if (method === "DELETE") {
+    res.end("<h1>Salam!</h1>");
+  }
 };
 
 const server = http.createServer(requestListener);
