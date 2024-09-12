@@ -1,0 +1,296 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header .nav-container {
+  width: 100%;
+  margin-inline: auto;
+  background-color: #006600;
+  padding: 0 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+header .nav-container .logo p {
+  font-family: "Klee One", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+header .nav-container .nav-list ul {
+  padding-left: 0;
+
+  display: flex;
+  gap: 0 2rem;
+  justify-content: center;
+}
+
+header .nav-container .nav-list li {
+  list-style: none;
+}
+
+header .nav-container .nav-list a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+header .nav-container .nav-list a:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+
+  margin-block: auto;
+  display: flex;
+  gap: 2rem;
+}
+
+header .jumbotron {
+  flex: 1;
+
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header .jumbotron .content .title {
+  margin-block: 2rem;
+
+  font-size: 3rem;
+}
+
+header .jumbotron .content p {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #006600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d00;
+}
+
+#content {
+  flex: 5;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+
+aside {
+  flex: 2;
+}
+
+aside .profile img {
+  width: 200px;
+}
+
+.profile header {
+  text-align: center;
+}
+
+footer {
+  background-color: #006600;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.form-container {
+  margin-top: 2rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-top: 0.5rem;
+}
+
+.form-container input,
+.form-container textarea {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  header .nav-container {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+
+  header .nav-container .nav-list ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  header .nav-container .nav-list li {
+    text-align: center;
+  }
+
+  header .jumbotron {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  header .jumbotron .content .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  header .jumbotron .content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+
+  header .jumbotron .hero img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #content {
+    flex: 1;
+  }
+
+  aside {
+    flex: 1;
+    margin-top: 2rem;
+  }
+
+  .profile header img {
+    width: 150px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .featured-image {
+    max-height: 200px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  header .jumbotron {
+    flex-direction: column;
+    padding: 3rem;
+  }
+
+  header .jumbotron .content .title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  header .jumbotron .content p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  header .jumbotron .hero img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  #content {
+    flex: 1;
+  }
+
+  aside {
+    flex: 1;
+    margin-top: 2rem;
+  }
+
+  .profile header img {
+    width: 180px;
+  }
+}
+
+@media (min-width: 1025px) {
+  header .jumbotron {
+    flex-direction: row;
+  }
+
+  header .jumbotron .content .title {
+    font-size: 3rem;
+  }
+
+  header .jumbotron .content p {
+    font-size: 1.2rem;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  aside {
+    margin-left: 2rem;
+  }
+
+  .profile header img {
+    width: 200px;
+  }
+}
