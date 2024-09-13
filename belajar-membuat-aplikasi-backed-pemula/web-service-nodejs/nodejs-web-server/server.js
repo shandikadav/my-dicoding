@@ -1,26 +1,28 @@
 const http = require("http");
 
-const requestListener = (req, res) => {
-  res.setHeader("Content-Type", "text/html");
+const requestListener = (request, response) => {
+  response.setHeader("Content-Type", "application/json");
 
-  res.statusCode = 200;
+  response.statusCode = 200;
 
-  const { method } = req;
+  const { method } = request;
 
   if (method === "GET") {
-    res.end("<h1>Hello!</h1>");
+    response.end("<h1>Hello!</h1>");
   }
 
   if (method === "POST") {
-    res.end("<h1>Hai!</h1>");
-  }
+    let body = [];
 
-  if (method === "PUT") {
-    res.end("<h1>Bonjour!</h1>");
-  }
+    request.on("data", (chunk) => {
+      body.push(chunk);
+    });
 
-  if (method === "DELETE") {
-    res.end("<h1>Salam!</h1>");
+    request.on("end", () => {
+      body = Buffer.concat(body).toString();
+      const { name } = JSON.parse(body);
+      response.end(`<h1>Hai, ${name}!</h1>`);
+    });
   }
 };
 
