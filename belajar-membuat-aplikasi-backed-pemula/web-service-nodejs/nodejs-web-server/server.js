@@ -48,7 +48,9 @@ const requestListener = (request, response) => {
     } else {
       response.statusCode = 400;
       response.end(
-        `<h1>Halaman tidak dapat diakses menggunakan ${method} request</h1>`
+        JSON.stringify({
+          message: `Halaman tidak dapat diakses menggunakan ${method} request`,
+        })
       );
     }
   } else {
