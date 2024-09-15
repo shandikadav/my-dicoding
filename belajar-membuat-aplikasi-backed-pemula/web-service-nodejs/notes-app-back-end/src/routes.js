@@ -3,6 +3,7 @@ const {
   addNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
+  editNoteByIdHandler,
 } = require("./handler");
 
 /* eslint-disable quotes */
@@ -21,6 +22,11 @@ const routes = [
     method: "GET",
     path: "/notes/{id}",
     handler: getNoteByIdHandler,
+  },
+  {
+    method: "PUT",
+    path: "/notes/{id}",
+    handler: editNoteByIdHandler,
   },
 ];
 
